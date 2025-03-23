@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧢 Benjamin Romm</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#" onclick="transitionToHome(); return false;">HOME</a>
+        <a href="#" onclick="transitionToProjects(); return false;">PROJECTS</a>
+    </nav>
+
+    <div class="home-container">
+        <div class="home-rectangle">
+            <img src="images/benjamin.JPeG" alt="Benjamin Romm" class="project-image">
+            <p class="home">Benjamin Romm</p>
+            <p class="home">+47 901 36 243</p>
+            <p class="home">romm.benjamin@gmail.com</p>
+
+
+        </div>
+        <div class="down-arrow" onclick="transitionToProjects()">
+            ↓
+        </div>
+    </div>
+
+    <div class="projects-container">
+        <div class="up-arrow" onclick="transitionToHome()">
+            ↑
+        </div>
+        <div class="projects-slider">
+            <div class="fixed-borders main"></div>
+            <div class="fixed-borders prev"></div>
+            <div class="fixed-borders next"></div>
+            <div class="project" id="project1">
+                <div class="project-metadata">
+                    <div class="collaborators">
+                        <span class="metadata-label">Collaborator(s):</span>
+                        <div class="metadata-content">Caroline Alvestad</div>
+                    </div>
+                    <div class="project-date">
+                        <span class="metadata-label">Timeframe:</span>
+                        <div class="metadata-content">March - April 2024</div>
+                    </div>
+                </div>
+                
+                <h1 class="project-title">Materials for Conversation</h1>
+                <img src="images/sdf/sdf1.JPG" alt="Project Image" class="project-image">
+                <p class="image-caption">The materials in action creating new ways of conversing in therapy.</p>
+                <p class="project-description">
+                    <a href="https://www.ijdesign.org/index.php/IJDesign/article/view/5772/1082">Project was published in the International Journal of Design, 2024.</a>
+                    <p class="project-description">This project was a part of Audun Formo Hay's PhD, revolving around the theme of dignity in the Child Welfare System in Bærum. During the span of 7 weeks, I was to create and prototype a transformative design proposal focusing on dignity as a theme. Every week I met up with Caroline Alvestad, a family therapist, who was my collaborator during the project.
+                    <p class="project-description">My proposal was a set of office materials that could be molded to fit different needs during the initial phase of therapy, when you are building an alliance with the patient. The material exploration consists of three components: The board, which is to symbolize the psychological phenomenon the "window of tolerance" and serve the purpose of a blank canvas. The "window of tolerance" is where you feel optimal, neither hypoaroused nor hyperaroused. The strings, as dynamic and temporary lines. And the whiteboard markers, with their erasable and proposing nature.</p>
+                    <p class="project-description">What the project aims to point out is that when working with the margins of society, there is a need for continuous adaptation rather than aiming for a one-size-fits-all model. By utilizing materials and their qualities, we can enable more dignified therapeutic conversations by letting more of the therapy be defined by the humans receiving it.</p>
+                </p>
+                
+                <hr class="content-separator">
+
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <img src="images/sdf/sdf2.JPG" alt="Gallery Image 1" class="gallery-image" onclick="enlargeImage(event)">
+                        <p class="image-caption">The materials used between two parents, to talk about cause and effect.</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/sdf/sdf3.JPG" alt="Gallery Image 2" class="gallery-image" onclick="enlargeImage(event)">
+                        <p class="image-caption">Co-designing with Caroline, using the road as metaphor to open the conversation.</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/sdf/sdf4.JPG" alt="Gallery Image 3" class="gallery-image" onclick="enlargeImage(event)">
+                        <p class="image-caption">By moving the strings, clients can be more in charge of what is important.</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/sdf/sdf5.JPG" alt="Gallery Image 4" class="gallery-image" onclick="enlargeImage(event)">
+                        <p class="image-caption">Me and Audun, discussing the project.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project" id="project2">
+                <div class="project-metadata">
+                    <div class="collaborators">
+                        <span class="metadata-label">Collaborator(s):</span>
+                        <div class="metadata-content">Bjørn Penk</div>
+                    </div>
+                    <div class="project-date">
+                        <span class="metadata-label">Timeframe:</span>
+                        <div class="metadata-content">August - December 2024</div>
+                    </div>
+                </div>
+                
+                <h1 class="project-title">PHASE 2 PHASE</h1>
+                <img src="images/p2p/p2p1.jpg" alt="Project Image" class="project-image">
+                <p class="image-caption">Front cover of the PHASE 2 PHASE newspaper.</p>
+                <p class="project-description">
+                    The PHASE 2 PHASE newspaper, is a collection of articles connected to the urban development of Oslo spanning from 1950 to 2050. Highlighting both the past, present and future – sharing stories, debates and dreams. The project is the result of an intense collaboration with seven co-students, as a part of the Systems Oriented Design masters course "Questioning (Habitat) Development". Myself and Bjørn Penk branched out from the group towards the end to realize our need of materializing the project into something tangible. The project was finalized through a shared presentation with the group of seven. For more information about the newspaper, click the front page to flip through the pages.
+                </p>
+
+                <div class="pdf-preview">
+                    <img src="images/p2p/preview.jpg" alt="PDF Preview" class="pdf-thumbnail">
+                    <div class="pdf-overlay">
+                        <button class="pdf-button" onclick="window.open('images/p2p/p2ppdf.pdf', '_blank')">
+                            <svg class="pdf-icon" viewBox="0 0 24 24" width="24" height="24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-4H7l5-5 5 5h-4v4h-2z"/>
+                            </svg>
+                            Open PDF
+                        </button>
+                    </div>
+                </div>
+
+                <hr class="content-separator">
+
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <img src="images/p2p/p2p4.jpg" alt="Gallery Image 1" class="gallery-image" onclick="enlargeImage(event)">
+                        <p class="image-caption">During the final presentation we wheeled in the newspapers to the audience.</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/p2p/p2p5.jpg" alt="Gallery Image 2" class="gallery-image" onclick="enlargeImage(event)">
+                        <p class="image-caption">Handing out the newspapers to the audience.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project" id="project3">
+                <div class="project-metadata">
+                    <div class="collaborators">
+                        <span class="metadata-label">Collaborator(s):</span>
+                        <div class="metadata-content">Jenny Holm Bjørgum</div>
+                    </div>
+                    <div class="project-date">
+                        <span class="metadata-label">Timeframe:</span>
+                        <div class="metadata-content">One week, April 2024</div>
+                    </div>
+                </div>
+                
+                <h1 class="project-title">Facilitating for a <s>creative</s> exploratory work culture with gift baskets</h1>
+                <img src="images/pmd/pmd2.JPG" alt="Project Image" class="project-image">
+                <p class="image-caption">Gift baskets for departments that are conservative and serious.</p>
+                <p class="project-description">
+                    <p class="project-description">This one-week project worked with how to facilitate for workplace culture that cultivates creativity. We collaborated with "Oppdragslaboratoriet," a competency course for the Norwegian public administration where they teach design and innovation strategy. We looked into an issue they had with getting what they teach to be used in the workplaces that participants went back to after the course.
+
+                        <p class="project-description">When interviewing the course responsible, we understood that in essence what they teach is techniques that are more exploratory. Upon closer examination, exploratory was just an administrative word for creativity. Building on this, we took a deep dive into research on creativity and made our own definition of creativity out of this.
+
+                            <p class="project-description">The definition is made up of four elements: creativity as novel, as relevant, as deviation, or as safe. Now depending on what administrative department you went back to, you would need different tactics based on how that particular workplace culture is. We made up a matrix deciding what gift basket you were getting dependent on how serious to playful the department is, as well as how changeable to conservative.
+                  
+                                <p class="project-description">Reflecting on the project, it has helped me understand the value of connecting knowledge and culture, and understanding the great potential that comes with balancing them.
+                </p>
+                
+                <hr class="content-separator">
+
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <img src="images/pmd/pmd3.JPG" alt="Gallery Image 1" class="gallery-image" onclick="enlargeImage(event)">
+                        <p class="image-caption">Gift baskets for departments that are conservative and playful.</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/pmd/pmd4.JPG" alt="Gallery Image 2" class="gallery-image" onclick="enlargeImage(event)">
+                        <p class="image-caption">Gift baskets for departments that are changeable and playful.</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/pmd/pmd5.JPG" alt="Gallery Image 3" class="gallery-image" onclick="enlargeImage(event)">
+                        <p class="image-caption">Gift baskets for departments that are changeable and serious.</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/pmd/pmd1.JPG" alt="Gallery Image 4" class="gallery-image" onclick="enlargeImage(event)">
+                        <p class="image-caption">Poster for the final presentation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project" id="project4">
+                <div class="project-metadata">
+                    <div class="collaborators">
+                        <span class="metadata-label">Collaborator(s):</span>
+                        <div class="metadata-content">Jenny Holm Bjørgum, Plan og Bygningsetaten</div>                    
+                    </div>
+                    <div class="project-date">
+                        <span class="metadata-label">Timeframe:</span>
+                        <div class="metadata-content">March - August 2023</div>
+                    </div>
+                </div>
+                
+                <h1 class="project-title">A living strategy: Taking ownership of Oslo's streets</h1>
+                <video src="images/pbe/pbe1.mov" controls autoplay muted loop class="project-image"></video>
+                <p class="image-caption">A part of building a new aesthetic for Levende gater, was to allow the citizens to take ownership of the street.</p>
+                <p class="project-description">
+                    The final project of my BA was a collaboration with Oslo Municipality’s initiative called “Levende gater.” The initiative revolved around temporarily closing down traffic in certain streets to open up for neighborhood activities to stronger social fabric in the city. Me and Jenny worked with the interactions between the organizers and the other neighbors. Through our research, we understood the importance of three key values: inspiration, dialogue, and ownership. Our design proposal consists of three strategic tactics with an overall new aesthetic for the initiative.
+
+                    <p class="project-description">In short, we created an idea bank for and by citizens to get inspired. For dialogue, we developed a physical invitation that was both low-threshold and personal. To build ownership, we identified loopholes where citizens could bend rules, such as tagging, but using chalk spray and markers instead. The project was very inspiring, as I have a profound interest in city planning and the everyday life of people in a society. The project landed me a summer job at “Plan- og bygningsetaten,” where we continued to develop the project.
+                </p>
+
+                <hr class="content-separator">
+
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <video src="images/pbe/pbe2.mov" controls autoplay muted loop class="gallery-image"></video>
+                        <p class="image-caption">Oslo's ideabank, was a digital platform for citizens to get inspired and share their ideas.</p>
+                    </div>
+                    <div class="gallery-item">
+                        <video src="images/pbe/pbe3.mov" controls autoplay muted loop class="gallery-image"></video>
+                        <p class="image-caption">The physical invitation, was a low-threshold way to invite people to the street.</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/pbe/pbe3.JPG" alt="Gallery Image 1" class="gallery-image" onclick="enlargeImage(event)">
+                        <p class="image-caption">Me and Jenny, discussing the project.</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/pbe/pbe4.png" alt="Gallery Image 2" class="gallery-image" onclick="enlargeImage(event)">
+                        <p class="image-caption">Concept for letting citizens be apart of the street.</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/pbe/pbe5.jpg" alt="Gallery Image 1" class="gallery-image" onclick="enlargeImage(event)">
+                        <p class="image-caption">A way to leave a trace on the street.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project" id="project5">
+                <div class="project-metadata">
+                    <div class="collaborators">
+                        <span class="metadata-label"></span>
+                        <div class="metadata-content"></div>
+                    </div>
+                    <div class="project-date">
+                        <span class="metadata-label">Timeframe:</span>
+                        <div class="metadata-content">Two weeks, December 2024</div>
+                    </div>
+                </div>
+                
+                <h1 class="project-title">Bouldering in Helsinki</h1>
+                <img src="images/bh/bh1.jpeg" alt="Project Image" class="project-image" id="bh1">
+                <p class="image-caption">Getting ready to climb the arete of the wall.</p>
+                <p class="project-description">
+                    Bouldering in Helsinki is a creative exploration into reshaping Helsinki’s urban landscape through the unconventional lens of bouldering. Motivated by my personal experiences in Nordic cities and a desire to address urban challenges, I leverage insights from Helsinki’s city strategy and architectural policy. Drawing inspiration from philosophers like Henry Lefebvre and the rebellious spirit of skateboarding, I propose an innovative approach to urban bouldering.
+
+                    <p class="project-description">The project resulted in a strategy involving the climbing community, documenting experiences, and collaborating with environmental NGOs. The goal was to create an interactive guidebook, not just documenting climbing sites but catalyzing urban exploration and community engagement. By combining physical activity with sustainable urban design, the project aimed to redefine public spaces and empower citizens.
+
+                    <p class="project-description">By acknowledging its roots in personal interests, I reflect on the project’s strengths and limitations, emphasizing the potential for broader impact in transforming urban spaces for the future.
+                </p>
+                <div class="pdf-preview">
+                    <img src="images/bh/bhpreview.jpg" alt="PDF Preview" class="pdf-thumbnail">
+                    <div class="pdf-overlay">
+                        <button class="pdf-button" onclick="window.open('images/bh/bh.pdf', '_blank')">
+                            <svg class="pdf-icon" viewBox="0 0 24 24" width="24" height="24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-4H7l5-5 5 5h-4v4h-2z"/>
+                            </svg>
+                            Open PDF
+                        </button>
+                    </div>
+                </div>
+
+                <hr class="content-separator">
+
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <video src="images/bh/bh1.mov" controls autoplay muted loop class="gallery-image"></video>
+                        <p class="image-caption">Urban bouldering in Helsinki.</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/bh/bh2.jpg" alt="Gallery Image 1" class="gallery-image" onclick="enlargeImage(event)">
+                        <p class="image-caption">Taking a break.</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/bh/bh3.jpg" alt="Gallery Image 2" class="gallery-image" onclick="enlargeImage(event)">
+                        <p class="image-caption">Metroing around the city with the equipment.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="project" id="project6">
+                <div class="project-metadata">
+                    <div class="collaborators">
+                        <span class="metadata-label">Collaborator(s):</span>
+                        <div class="metadata-content">Uyanga Baasankhuu, Georgia Morandi, Maria Okkonen</div>
+                    </div>
+                    <div class="project-date">
+                        <span class="metadata-label">Timeframe:</span>
+                        <div class="metadata-content">One week, September 2024</div>
+                    </div>
+                </div>
+                
+                <h1 class="project-title">Noticing nature</h1>
+                <img src="images/nn/nn1.jpg" alt="Project Image" class="project-image" id="nn">
+                <p class="image-caption">During guided meditation and embodiment.</p>
+                <p class="project-description">As the final assignment for the course “Collaborative and Participatory Techniques in Design,” we were tasked to make a workshop of our choice utilizing what we had learned. In a group with three fellow students, we wanted to explore embodied knowledge in relation to the more-than-human.
+
+                    <p class="project-description">As a vehicle for this, we designed a ritualistic journey consisting of a silent walk, prompted meditation, and ritualistic artifacts like pinecone necklaces. We got 5 participants to partake in the workshop, and throughout the experience, they (together with us) tried to embody being in the woods.
+                    
+                        <p class="project-description">The result of the workshop was reflections on how the ritual made them feel about the nonhuman beings that surrounded them—going from a plant of moss to how moss as a body covers the whole forest floor, or how the reeds are not a plant but a motion in the wind of sound and force.
+                    
+                            <p class="project-description">The project has taught me about how I relate to the forest, but also ways to design for reflection and connection with what we all too often take for granted.</p>
+            
+                
+                            <hr class="content-separator">
+                
+                            <div class="gallery">
+                                <div class="gallery-item">
+                                    <img src="images/nn/nn2.jpg" alt="Gallery Image 1" class="gallery-image" onclick="enlargeImage(event)">
+                                    <p class="image-caption">During the guided meditation.</p>
+                                </div>
+                                <div class="gallery-item">
+                                    <video src="images/nn/nn3.MOV" controls autoplay muted loop class="gallery-image"></video>
+                                    <p class="image-caption">A silent walk in the woods to make space for noticing.</p>
+                                </div>
+                            </div>
+                        </div>
+            
+            <div class="project" id="project7">
+                <div class="project-metadata">
+                    <div class="collaborators">
+                        <span class="metadata-label">Collaborator(s):</span>
+                        <div class="metadata-content">Bjørn Penk</div>
+                    </div>
+                    <div class="project-date">
+                        <span class="metadata-label">Timeframe:</span>
+                        <div class="metadata-content">January - May 2025</div>
+                    </div>
+                </div>
+                
+                <h1 class="project-title">Framework for fascinating everyday activism</h1>
+                <img src="images/diploma/dp1.png" alt="Project Image" class="project-image">
+                <p class="image-caption">Picture from a community experiment.</p>
+                <p class="project-description">Master thesis coming soon.</p>
+            </div>
+
+            <div class="project" id="project8">
+                <div class="project-metadata">
+                    <div class="collaborators">
+                        <span class="metadata-label">Collaborator(s):</span>
+                        <div class="metadata-content">Bjørn Penk</div>
+                    </div>
+                    <div class="project-date">
+                        <span class="metadata-label">Timeframe:</span>
+                        <div class="metadata-content">January - May 2022</div>
+                    </div>
+                </div>
+                
+                <h1 class="project-title">Foreningen Utenfor Allfarvei</h1>
+                <img src="images/fua/fua1.jpg" alt="Project Image" class="project-image">
+                <p class="image-caption">Thanking the road for a safe journey.</p>
+                <p class="project-description">“Foreningen utenfor allfarvei” is a service design project developed during the fourth design semester at the Oslo School of Architecture and Design. It aims to make car travel an extended experience through meaningful rituals connected to the road. The service was thought existing for those who seek a sense of belonging to the people they pass, the mystery of the mountains they drive under, and an understanding of the history of the road. “Foreningen utenfor allfarvei” is a detour to national belonging. Relevant questions such as “are we traveling the right way?”, “what is faith in a modern society?”, and “is there room for associations today?” were central for us. This supplemented with literature, interviews, and late nights, has resulted in the “Foreningen utenfor allfarvei”.</p>
+                <div class="pdf-preview">
+                    <img src="images/fua/fuapreview.jpg" alt="PDF Preview" class="pdf-thumbnail">
+                    <div class="pdf-overlay">
+                        <button class="pdf-button" onclick="window.open('images/fua/fuapdf.pdf', '_blank')">
+                            <svg class="pdf-icon" viewBox="0 0 24 24" width="24" height="24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-4H7l5-5 5 5h-4v4h-2z"/>
+                    
+                            </div>
+            </div>
+            <hr class="content-separator">
+
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="images/fua/fua2.jpg" alt="Gallery Image 1" class="gallery-image" onclick="enlargeImage(event)">
+                    <p class="image-caption">Local ritual to feed the clams stone for pearls.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/fua/fua3.png" alt="Gallery Image 2" class="gallery-image" onclick="enlargeImage(event)">
+                    <p class="image-caption">A poster as a part of the associations journal.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/fua/fua4.png" alt="Gallery Image 3" class="gallery-image" onclick="enlargeImage(event)">
+                    <p class="image-caption">The design for the assocations journal.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/fua/fua5.jpg" alt="Gallery Image 4" class="gallery-image" onclick="enlargeImage(event)">
+                    <p class="image-caption">A proud member of the association.</p>
+                </div>
+        </div>
+    </div>
+
+    <!-- Modal should be outside the projects-slider -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <img id="enlargedImage" class="modal-content">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

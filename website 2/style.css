@@ -1,0 +1,535 @@
+:root {
+    --dark-blue: #1d1919;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Arial Narrow", Arial, sans-serif;
+    overflow: hidden;
+    background: rgb(251, 252, 255);
+    color: var(--dark-blue);
+    margin: 0;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgb(251, 252, 255);
+    padding: 0.5rem;
+    z-index: 2000;
+    border-bottom: 0.5px solid var(--dark-blue); /* Thin dark blue line */
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Space between links */
+    font-family: "Arial Narrow", Arial, sans-serif;
+}
+
+.navbar a {
+    color: var(--dark-blue);
+    text-decoration: none;
+    font-size: 1.1rem;
+    margin-right: 0;
+}
+
+.navbar a:hover {
+    opacity: 0.7; /* Subtle hover effect */
+}
+
+.content {
+    max-width: 33%;
+    margin: 80px auto 0;
+    padding: 20px;
+}
+
+/* Fixed borders for scrolling */
+.fixed-borders {
+    top: 60px; /* Align perfectly with cards */
+    bottom: 0;
+    width: 45%;
+    left: 27.5%;
+}
+
+.fixed-borders::before {
+    .fixed-borders.main::before {
+        width: 100%; /* Ensure it only spans the active card */
+    }
+    
+}
+
+.fixed-borders::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-left: 0.5px solid #1d1919;
+    border-right: 0.5px solid #1d1919;
+}
+
+/* Position for previous card borders */
+.fixed-borders.prev {
+    transform: translateX(-145%);
+    opacity: 0;
+}
+
+.fixed-borders.prev::after {
+    right: 0px; /* Move right border of previous card back to 0px */
+}
+
+/* Position for next card borders */
+.fixed-borders.next {
+    transform: translateX(145%);
+    opacity: 0;
+}
+
+/* Project cards */
+.project {
+    position: absolute;
+    width: 45%;
+    padding: 20px 40px 40px 40px;
+    transition: transform 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+    background: rgb(251, 252, 255);
+    cursor: pointer;
+    left: 27.5%;
+    height: 100vh;
+    overflow-y: auto;
+    visibility: visible;
+    opacity: 1;
+    border-top: 0.5px solid #1d1919;
+    border-left: 0.5px solid #1d1919;
+    border-right: 0.5px solid #1d1919;
+    margin-left: 4 px; /* Adjust for border alignment */
+}
+
+/* Hide projects when they're moving behind */
+.project.hidden {
+    z-index: -1;
+}
+
+.project.active {
+    z-index: 1;
+}
+
+/* Borders attached to cards */
+.project::before,
+.project::after {
+    content: '';
+    position: absolute;
+    top: -80px;
+    bottom: 0;
+    left: -1px;
+    right: 0px;
+    width: 0.5px;
+    background-color: var(--dark-blue);
+}
+
+.project::before {
+    left: 0;
+}
+
+.project::after {
+    right: 0;
+}
+
+/* Content wrapper to control scroll length */
+.project-content {
+    position: relative;
+    z-index: 1;
+    min-height: min-content;
+    padding-bottom: 60px; /* Add space after content */
+}
+
+.project-title {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    font-weight: normal;
+    color: var(--dark-blue);
+    text-align: center;
+    font-family: Garamond, "EB Garamond", "Times New Roman", serif;
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    border: 0.5px solid var(--dark-blue);
+}
+
+.project-description {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-weight: lighter; /* Makes body text more elegant */
+    color: var(--dark-blue);
+    font-family: "Arial Narrow", Arial, sans-serif;
+}
+
+/* Container for all project content */
+.projects-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transform: translateY(100%);
+    transition: transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+    background: rgb(251, 252, 255);
+}
+
+/* Project slider positioning */
+.projects-slider {
+    position: relative;
+    margin-top: 60px; /* Reduced from 120px since we don't need space for up arrow */
+    width: 100%;
+}
+
+/* Up arrow positioning */
+.up-arrow, .down-arrow {
+    display: none;
+}
+
+.project-nav {
+    width: 200px;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+}
+
+.project-nav-item {
+    padding: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.project-nav-item:hover {
+    background-color: #e0e0e0;
+}
+
+.project-nav-item.active {
+    background-color: #333;
+    color: rgb(251, 252, 255);
+}
+
+.projects-wrapper {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Navigation arrows - adjusted positioning */
+.nav-arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1em;
+    cursor: pointer;
+    z-index: 1001;
+    color: var(--dark-blue);
+    background: none;
+    border: none;
+    padding: 20px;
+}
+
+.nav-arrow.left {
+    left: 20%; /* Position between center card and left card */
+}
+
+.nav-arrow.right {
+    right: 20%; /* Position between center card and right card */
+}
+
+.nav-arrow.hidden {
+    display: none;
+}
+
+/* Gallery styles */
+.gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 40px;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+/* Container for each gallery item */
+.gallery-item {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 2rem; /* Space between gallery items */
+    text-align: left; /* Force left alignment for all content */
+}
+
+/* Gallery images */
+.gallery-image {
+    width: 100%;
+    height: auto;
+    border: 0.5px solid var(--dark-blue);
+    display: block;
+}
+
+/* All image captions */
+.image-caption {
+    margin-top: 0.1rem;
+    margin-bottom: 2rem;
+    padding: 0;
+    font-style: italic;
+    color: var(--dark-blue);
+    font-size: 0.9em;
+    text-align: left;
+    font-family: "Arial Narrow", Arial, sans-serif;
+}
+
+/* Specific to gallery captions */
+.gallery-item .image-caption {
+    display: block;
+    margin-top: 0.1rem;
+    text-align: left !important; /* Force left alignment */
+    width: 100%;
+}
+
+/* Container styles */
+.image-container {
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    cursor: pointer;
+}
+
+.modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 80%;
+    max-height: 80vh;
+    border: 0.5px solid var(--dark-blue);
+    object-fit: contain;
+}
+
+/* Specific styles for main project image caption */
+.project-image + .image-caption {
+    margin-top: 0.1rem; /* Even smaller gap between image and caption */
+    margin-bottom: 2rem; /* Keep existing space before next paragraph */
+    font-style: italic;
+    color: var(--dark-blue);
+    font-size: 0.9em;
+    text-align: left;
+    padding-left: 0;
+}
+
+/* Keep gallery image captions centered */
+.gallery-item .image-caption {
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Keep all other text Arial Narrow */
+body, 
+.navbar,
+.project-description,
+.image-caption {
+    font-family: "Arial Narrow", Arial, sans-serif;
+}
+
+/* Make the project content define the scrollable area */
+.project > *:last-child {
+    margin-bottom: 60px; /* Add space after last element */
+}
+
+.project-metadata {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 80px;
+    margin-top: 20px;
+    color: var(--dark-blue);
+    font-family: "Arial Narrow", Arial, sans-serif;
+}
+
+.metadata-label {
+    display: block;
+    font-size: 0.9em;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.metadata-content {
+    font-family: "Arial Narrow", Arial, sans-serif;
+}
+
+.collaborators {
+    text-align: left;
+}
+
+.project-date {
+    text-align: right;
+}
+
+.pdf-preview {
+    position: relative;
+    width: 70%;
+    margin: 20px auto;
+    cursor: pointer;
+    border: 0.5px solid #1d1919; /* Dark blue, 0.5px to match other borders */
+    box-shadow: none;
+}
+
+.pdf-thumbnail {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.pdf-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.pdf-preview:hover .pdf-overlay {
+    opacity: 1;
+}
+
+.pdf-button {
+    background: rgb(251, 252, 255);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-family: "Arial Narrow", Arial, sans-serif;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.pdf-button:hover {
+    background: #f5f5f5;
+}
+
+.pdf-icon {
+    fill: currentColor;
+}
+
+/* Add this new class */
+.content-separator {
+    width: 100%;
+    margin: 40px 0;
+    border: none;
+    border-top: 0.5px solid #1d1919;
+}
+
+.gallery-item img {
+    display: block; /* Removes any unwanted space below the image */
+    width: 100%;    /* Makes image fill container */
+    height: auto;   /* Maintains aspect ratio */
+}
+
+/* If the image is specifically problematic */
+#project3 .gallery-item:last-child {
+    aspect-ratio: 3/2; /* Match the image's aspect ratio */
+}
+
+#project3 .gallery-item:last-child img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.home-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    background: rgb(251, 252, 255);
+    transition: transform 0.8s ease;
+}
+
+.home-rectangle {
+    width: 40%;
+    height: 90vh;
+    margin: 60px auto 0;
+    border: 0.5px solid #1d1919;
+    padding: 20px 20px 20px 20px;   
+}
+.home-rectangle img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Animation classes */
+.transition-to-projects .home-container {
+    transform: translateY(-100%);
+}
+
+.transition-to-projects .projects-container {
+    transform: translateY(0);
+}
+
+.transition-to-projects .up-arrow {
+    opacity: 1;
+}
+
+.project::before {
+    content: '';
+    position: absolute;
+    top: -1px; /* Align the top border */
+    left: 0;
+    width: 100%; /* Ensure the border is only as wide as the card */
+    height: 0.5px; /* Thickness of the top border */
+    background-color: var(--dark-blue);
+}
+
+.home {
+    font-family: "Arial Narrow", Arial, sans-serif;
+    text-align: center;
+    font-style: italic;
+    padding: 10px;
+}
+
+#bh1 {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    display: block;
+}
+
+#nn {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
